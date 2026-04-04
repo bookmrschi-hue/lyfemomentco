@@ -68,6 +68,31 @@ app.post('/api/create-payment', async (req, res) => {
   }
 });
 
+// ── Stripe PaymentIntent endpoint ───────────────────────────────────────────
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
+app.post('/api/create-payment-intent', async (req, res) => {
+  const { amount, productName, treats } = req.body;
+  if (!amount || isNaN(parseFloat(amount)) || parseFloat(amount) <= 0) {
+    return res.status(400).json({ error: 'Invalid amount.' });
+  }
+  try {
+    const intent = await stripe.paymentIntents.create({
+      amount: Math.round(parseFloat(amount) * 100),
+      currency: 'usd',
+      metadata: {
+        product: productName || '',
+        treats: (treats || []).join(', '),
+      },
+      description: `Lyfe Moment Co. — ${productName || 'Order'}`,
+    });
+    res.json({ clientSecret: intent.client_secret });
+  } catch (err) {
+    console.error('Stripe PaymentIntent error:', err.message);
+    res.status(400).json({ error: err.message });
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, async () => {
   console.log(`Lyfe Moment Co. server running on http://localhost:${PORT}`);
