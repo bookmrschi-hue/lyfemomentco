@@ -1761,6 +1761,18 @@ function orderProduct(name){
   if(notesField){
     notesField.value = notesField.value ? notesField.value + '\n' + name : name;
   }
+  // Try to auto-check a matching product checkbox
+  let matched = false;
+  document.querySelectorAll('input[name="op"]').forEach(cb=>{
+    if(!matched && name.toLowerCase().includes(cb.value.toLowerCase())){
+      cb.checked = true; matched = true;
+    }
+  });
+  // If no checkbox matched, check the first one as a fallback so validation passes
+  if(!matched){
+    const first = document.querySelector('input[name="op"]');
+    if(first) first.checked = true;
+  }
   document.getElementById('order').scrollIntoView({behavior:'smooth'});
   showToast('✿ Tell us about your order below!');
 }
@@ -1966,7 +1978,8 @@ function validateOrder(){
   if(!_orderVal('input[placeholder="Full name"]')){showToast('Please enter your name.');return false;}
   if(!_orderVal('input[placeholder="Best contact"]')){showToast('Please enter your phone or email.');return false;}
   if(!_orderVal('input[placeholder="Street, City, State, ZIP"]')){showToast('Please enter your shipping address.');return false;}
-  if(!document.querySelectorAll('input[name="op"]:checked').length){showToast('Please select at least one product.');return false;}
+  const notesVal = _orderVal('textarea');
+  if(!document.querySelectorAll('input[name="op"]:checked').length && !notesVal){showToast('Please select a product or describe your order in the notes field.');return false;}
   return true;
 }
 
@@ -2015,10 +2028,22 @@ async function handleOrder(){
       btn.disabled=false;btn.textContent='Pay with Card ✦';
     }
   }else if(activePayMethod==='zelle'){
-    showToast('Order received! Send payment via Zelle to lyfemomentco@gmail.com — include your name in the memo. ✦');
+    showOrderConfirm('Send payment via <strong>Zelle</strong> to <strong>lyfemomentco@gmail.com</strong><br>Include your name in the memo. We\'ll confirm your order within 24 hrs. ✿');
   }else{
-    showToast('Order received! Send payment to $LyfeMomentCo on Cash App — include your name in the memo. ✦');
+    showOrderConfirm('Send payment to <strong>$LyfeMomentCo</strong> on <strong>Cash App</strong><br>Include your name in the memo. We\'ll confirm your order within 24 hrs. ✿');
   }
+}
+function showOrderConfirm(msg){
+  let box = document.getElementById('order-confirm-box');
+  if(!box){
+    box = document.createElement('div');
+    box.id = 'order-confirm-box';
+    box.style.cssText = 'background:var(--tiffany3);border:2px solid var(--tiffany);border-radius:12px;padding:20px 24px;margin-top:18px;font-size:0.97rem;line-height:1.6;color:#1a3a40;';
+    const btn = document.getElementById('order-submit-btn');
+    btn.parentNode.insertBefore(box, btn.nextSibling);
+  }
+  box.innerHTML = '✿ <strong>Order received!</strong><br>' + msg;
+  box.scrollIntoView({behavior:'smooth', block:'center'});
 }
 function handleUpload(e){
   const files=Array.from(e.target.files);
