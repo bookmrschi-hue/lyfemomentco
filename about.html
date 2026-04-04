@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Ms. Wknderful — Lyfe Moment Co.</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Nunito:wght@400;600;700;800;900&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tiffany:#7EC8D8;--tiffany2:#A8DCE8;--tiffany3:#D4F0F8;
+  --yellow:#F5D020;--yellow2:#FFE566;--yellow3:#FFFACC;
+  --cream:#FFFEF5;--white:#FFFFFF;--charcoal:#1A2A2A;
+  --warm:#2A4A4A;--muted:#6A8A8A;--gold:#DAA520;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:hidden;}
+
+/* NAV */
+nav{background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:3px solid var(--tiffany);display:flex;align-items:center;justify-content:space-between;padding:16px 48px;position:sticky;top:0;z-index:300;box-shadow:0 2px 20px rgba(126,200,216,0.2);}
+.logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;}
+.logo-main{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--charcoal);font-weight:700;letter-spacing:1px;}
+.logo-tag{font-family:'Dancing Script',cursive;font-size:0.9rem;color:var(--tiffany);}
+.nav-back{background:linear-gradient(135deg,var(--tiffany),#5BBAD5);color:white;border:none;padding:11px 24px;border-radius:30px;font-family:'Nunito',sans-serif;font-weight:900;font-size:0.85rem;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 4px 15px rgba(126,200,216,0.4);transition:all .2s;}
+.nav-back:hover{transform:translateY(-2px);}
+
+/* HERO */
+.about-hero{background:linear-gradient(135deg,#E8F8FC 0%,#FFFDE8 60%,#F8FCFF 100%);padding:80px 48px;text-align:center;position:relative;overflow:hidden;}
+.about-hero::before{content:'✿ ✾ ❀ ✿ ❁ ✾ ✿';position:absolute;top:20px;left:0;right:0;font-size:2rem;color:rgba(126,200,216,0.25);text-align:center;letter-spacing:30px;pointer-events:none;}
+.hero-eyebrow{font-family:'Dancing Script',cursive;font-size:1.3rem;color:var(--tiffany);margin-bottom:10px;}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4.5rem);font-weight:700;color:var(--charcoal);line-height:1.05;margin-bottom:14px;}
+.hero-name em{color:var(--tiffany);font-style:italic;}
+.hero-tagline{font-size:1rem;font-weight:700;color:var(--warm);margin-bottom:32px;line-height:1.7;}
+.hero-avatar{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--tiffany),#5BBAD5);display:flex;align-items:center;justify-content:center;font-size:3rem;margin:0 auto 24px;box-shadow:0 8px 28px rgba(126,200,216,0.3);}
+
+/* SECTIONS */
+section{padding:72px 48px;}
+.eyebrow{font-family:'Dancing Script',cursive;font-size:1.1rem;color:var(--tiffany);margin-bottom:8px;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--charcoal);font-weight:700;margin-bottom:14px;line-height:1.1;}
+.teal-line{width:48px;height:3px;background:linear-gradient(90deg,var(--tiffany),var(--yellow));margin:16px 0;border-radius:2px;}
+
+/* BIO */
+#bio{background:white;}
+.bio-inner{display:grid;grid-template-columns:1fr 1.6fr;gap:56px;align-items:start;max-width:1000px;margin:0 auto;}
+.bio-card{background:linear-gradient(145deg,#0A2A28,#1A3A38);border-radius:20px;padding:36px 28px;text-align:center;position:relative;overflow:hidden;}
+.bio-card::before{content:'✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦';position:absolute;top:12px;left:0;right:0;text-align:center;font-size:0.7rem;color:rgba(245,208,32,0.35);letter-spacing:6px;}
+.bio-card-icon{font-size:3.5rem;margin:14px 0 16px;}
+.bio-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:white;font-weight:700;margin-bottom:8px;}
+.bio-card p{color:rgba(255,255,255,0.65);font-size:0.85rem;font-weight:700;line-height:1.7;margin-bottom:14px;}
+.bio-tag{display:inline-block;background:rgba(126,200,216,0.15);border:1px solid rgba(126,200,216,0.4);color:var(--tiffany2);font-size:0.72rem;font-weight:900;padding:4px 12px;border-radius:20px;margin:3px;}
+.bio-text p{color:var(--warm);font-size:0.92rem;font-weight:700;line-height:1.85;margin-bottom:18px;}
+.bio-text strong{color:var(--charcoal);}
+
+/* VALUES */
+#values{background:linear-gradient(180deg,var(--tiffany3),var(--yellow3));}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:40px;max-width:1000px;margin-left:auto;margin-right:auto;}
+.val-card{background:white;border-radius:18px;padding:28px 24px;border:1.5px solid rgba(126,200,216,0.2);}
+.val-icon{font-size:2rem;margin-bottom:12px;}
+.val-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--charcoal);margin-bottom:6px;}
+.val-desc{font-size:0.8rem;color:var(--muted);font-weight:700;line-height:1.6;}
+
+/* SCHOOLS */
+#schools{background:white;}
+.schools-inner{max-width:1000px;margin:0 auto;}
+.schools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:40px;}
+.school-district{background:linear-gradient(135deg,var(--tiffany3),var(--yellow3));border-radius:14px;padding:22px 20px;border:1.5px solid var(--tiffany2);}
+.district-name{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;color:var(--warm);margin-bottom:10px;}
+.school-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.school-list li{display:flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:800;color:var(--charcoal);}
+.school-list li::before{content:'✦';color:var(--tiffany);font-size:0.6rem;}
+
+/* FAN PRICING CALLOUT */
+.fan-callout{background:linear-gradient(135deg,#0A2A28,#1A3A38);border-radius:20px;padding:40px 36px;max-width:700px;margin:56px auto 0;text-align:center;position:relative;overflow:hidden;}
+.fan-callout::before{content:'✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦';position:absolute;top:12px;left:0;right:0;text-align:center;font-size:0.7rem;color:rgba(245,208,32,0.35);letter-spacing:8px;}
+.fan-callout h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:white;font-weight:700;margin:14px 0 6px;}
+.fan-callout p{color:rgba(255,255,255,0.7);font-size:0.88rem;font-weight:700;margin-bottom:20px;}
+.fan-price-row{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
+.fan-price-pill{background:rgba(245,208,32,0.15);border:1.5px solid rgba(245,208,32,0.4);border-radius:12px;padding:14px 24px;text-align:center;}
+.fan-price-pill .amt{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--yellow2);font-weight:700;display:block;}
+.fan-price-pill .qty{font-size:0.75rem;font-weight:900;color:rgba(255,255,255,0.6);letter-spacing:1px;text-transform:uppercase;}
+.fan-how{background:rgba(255,255,255,0.06);border:1px solid rgba(126,200,216,0.2);border-radius:12px;padding:18px 20px;text-align:left;margin-bottom:22px;}
+.fan-how p{color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:700;margin-bottom:6px;line-height:1.6;}
+.fan-how ol{list-style:decimal;padding-left:18px;color:rgba(255,255,255,0.7);font-size:0.82rem;font-weight:700;line-height:1.8;}
+.fan-cta-btn{background:linear-gradient(135deg,var(--yellow),#E8B800);color:var(--charcoal);border:none;border-radius:30px;padding:14px 36px;font-family:'Nunito',sans-serif;font-weight:900;font-size:0.9rem;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;box-shadow:0 6px 20px rgba(245,208,32,0.3);}
+.fan-cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(245,208,32,0.4);}
+
+/* FOOTER */
+footer{background:linear-gradient(135deg,var(--tiffany3),var(--yellow3));padding:40px 48px;border-top:3px solid var(--tiffany2);text-align:center;}
+.foot-logo-main{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--charcoal);font-weight:700;}
+.foot-logo-tag{font-family:'Dancing Script',cursive;font-size:0.9rem;color:var(--tiffany);margin-bottom:12px;}
+.foot-bottom{font-size:0.72rem;color:var(--muted);font-weight:700;margin-top:12px;}
+
+@media(max-width:900px){
+  nav{padding:14px 20px;}
+  section{padding:52px 20px;}
+  .about-hero{padding:60px 20px;}
+  .bio-inner{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">
+    <span class="logo-main">Lyfe Moment Co.</span>
+    <span class="logo-tag">For every life moment, make it memorable ✿</span>
+  </a>
+  <a href="index.html" class="nav-back">← Back to Shop</a>
+</nav>
+
+<!-- HERO -->
+<div class="about-hero">
+  <div class="hero-avatar">✿</div>
+  <div class="hero-eyebrow">The Woman Behind the Magic</div>
+  <h1 class="hero-name">Meet <em>Ms. Wknderful</em></h1>
+  <p class="hero-tagline">Substitute teacher by day. Party designer by heart.<br>Creating moments families will never forget — one custom fan at a time.</p>
+</div>
+
+<!-- BIO -->
+<section id="bio">
+  <div class="bio-inner">
+    <div>
+      <div class="bio-card">
+        <div class="bio-card-icon">🌟</div>
+        <h3>Ms. Wknderful</h3>
+        <p>Founder · Designer · Party Architect</p>
+        <div>
+          <span class="bio-tag">IE Native</span>
+          <span class="bio-tag">Sub Teacher</span>
+          <span class="bio-tag">DIY Queen</span>
+          <span class="bio-tag">10 Yrs Digital Marketing</span>
+          <span class="bio-tag">Corona CA</span>
+        </div>
+      </div>
+    </div>
+    <div class="bio-text">
+      <div class="eyebrow">My Story</div>
+      <div class="sec-title">Built from Love,<br>Fueled by Craft</div>
+      <div class="teal-line"></div>
+      <p>I'm a first-generation American, born of African parents, raised right here in the Inland Empire. I grew up watching my family pour love into every celebration — and that love never left me.</p>
+      <p>By day I'm a substitute teacher across the <strong>Brea Olinda, Corona-Norco, Fontana, Ontario-Montclair, Moreno Valley, and San Bernardino</strong> school districts. I've been in classrooms with your kids. I know what these graduation moments mean to families.</p>
+      <p>I fell in love with crafting in high school — making scrapbooks for friends, handcrafting cards, designing keepsakes that nobody else had. Over time, those scrapbooks became digital designs, and those digital designs became a full business.</p>
+      <p>I spent <strong>10 years in digital marketing for events</strong>, leading festival and event marketing projects that taught me the power of a beautiful, well-executed experience. Then I asked myself: why can't families in my community have that same level of quality?</p>
+      <p>So Lyfe Moment Co. was born. I believe in <strong>great work, beautiful execution, and fair prices</strong> — not cheap prices, because this work has real value, but prices that honor the families I grew up with.</p>
+      <p>I'm the <strong>Queen of DIY</strong>, and I want to help every family who loves personalization and themed experiences feel like they have a professional in their corner — whether they come to me, or I give them the tools to do it themselves.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section id="values">
+  <div style="text-align:center;">
+    <div class="eyebrow">What I Stand For</div>
+    <div class="sec-title" style="text-align:center;">My Promise to You</div>
+    <div class="teal-line" style="margin:16px auto;"></div>
+  </div>
+  <div class="values-grid">
+    <div class="val-card">
+      <div class="val-icon">✨</div>
+      <div class="val-title">Beautiful Work</div>
+      <div class="val-desc">Every product I make is designed with intention. No templates that "look custom" — yours is truly yours.</div>
+    </div>
+    <div class="val-card">
+      <div class="val-icon">💰</div>
+      <div class="val-title">Fair Prices</div>
+      <div class="val-desc">Not cheap. But honest. Quality work costs what it costs — and I price to honor both your budget and my craft.</div>
+    </div>
+    <div class="val-card">
+      <div class="val-icon">⚡</div>
+      <div class="val-title">Fast Turnaround</div>
+      <div class="val-desc">Proof in 2–3 business days, ships in 4–7. Rush orders available. Because life doesn't wait.</div>
+    </div>
+    <div class="val-card">
+      <div class="val-icon">🎓</div>
+      <div class="val-title">Community First</div>
+      <div class="val-desc">I've been in your kids' classrooms. I know what these moments mean. I take every order personally.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHOOLS -->
+<section id="schools">
+  <div class="schools-inner">
+    <div class="eyebrow">The Schools We Love</div>
+    <div class="sec-title">Serving Families Across the IE</div>
+    <div class="teal-line"></div>
+    <p style="color:var(--muted);font-weight:700;font-size:0.9rem;line-height:1.7;max-width:600px;">As a substitute teacher across six school districts, I know these schools — and the families behind the students graduating from them. Lyfe Moment Co. is proud to serve every one of them.</p>
+
+    <div class="schools-grid">
+      <div class="school-district">
+        <div class="district-name">Brea Olinda USD</div>
+        <ul class="school-list">
+          <li>Brea Olinda High School</li>
+        </ul>
+      </div>
+      <div class="school-district">
+        <div class="district-name">Corona-Norco USD</div>
+        <ul class="school-list">
+          <li>Corona High School</li>
+          <li>Centennial High School</li>
+          <li>Norco High School</li>
+          <li>Santiago High School</li>
+          <li>Eleanor Roosevelt High School</li>
+        </ul>
+      </div>
+      <div class="school-district">
+        <div class="district-name">Fontana USD</div>
+        <ul class="school-list">
+          <li>Fontana High School</li>
+          <li>Jurupa Hills High School</li>
+          <li>Summit High School</li>
+          <li>Kaiser High School</li>
+        </ul>
+      </div>
+      <div class="school-district">
+        <div class="district-name">Ontario-Montclair SD</div>
+        <ul class="school-list">
+          <li>Chaffey High School</li>
+          <li>Colony High School</li>
+          <li>Ontario High School</li>
+        </ul>
+      </div>
+      <div class="school-district">
+        <div class="district-name">Moreno Valley USD</div>
+        <ul class="school-list">
+          <li>Moreno Valley High School</li>
+          <li>Valley View High School</li>
+          <li>Vista del Lago High School</li>
+        </ul>
+      </div>
+      <div class="school-district">
+        <div class="district-name">San Bernardino City USD</div>
+        <ul class="school-list">
+          <li>San Bernardino High School</li>
+          <li>Cajon High School</li>
+          <li>Pacific High School</li>
+          <li>Arroyo Valley High School</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FAN PRICING CALLOUT -->
+    <div class="fan-callout">
+      <h3>🎓 Custom Graduation Fans</h3>
+      <p>The most popular product of grad season — fully personalized with your graduate's photos, name & school colors.</p>
+      <div class="fan-price-row">
+        <div class="fan-price-pill">
+          <span class="amt">$30</span>
+          <span class="qty">5 fans</span>
+        </div>
+        <div class="fan-price-pill">
+          <span class="amt">$35</span>
+          <span class="qty">6 fans</span>
+        </div>
+      </div>
+      <div class="fan-how">
+        <p>To place your fan order, send us:</p>
+        <ol>
+          <li>Graduate's full name</li>
+          <li>School name and/or colors</li>
+          <li>3–5 of your favorite photos</li>
+        </ol>
+      </div>
+      <a href="index.html#fans" class="fan-cta-btn">Order Fans Now ✦</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo-main">Lyfe Moment Co.</div>
+  <div class="foot-logo-tag">For every life moment, make it memorable ✿</div>
+  <div class="foot-bottom">
+    Based in Corona, CA &nbsp;·&nbsp; Ships Nationwide &nbsp;·&nbsp;
+    <a href="index.html" style="color:var(--tiffany);font-weight:900;">← Back to Shop</a>
+  </div>
+</footer>
+
+</body>
+</html>
