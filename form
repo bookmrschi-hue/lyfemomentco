@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Place Your Order — Lyfe Moment Co.</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #7EC8D8;
+  --teal-dark: #1A3A38;
+  --teal-deep: #0D2B2A;
+  --yellow: #F5D020;
+  --yellow-light: #FFFACC;
+  --cream: #FFFEF5;
+  --charcoal: #1A2A2A;
+  --warm: #2A4A4A;
+  --muted: #5A7A7A;
+  --white: #FFFFFF;
+  --border: rgba(126,200,216,0.25);
+  --red: #E53E3E;
+  --success: #0D6E7A;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+font-family: ‘Nunito’, sans-serif;
+background: var(–cream);
+color: var(–charcoal);
+min-height: 100vh;
+font-size: 16px;
+line-height: 1.6;
+}
+
+/* ── HEADER ── */
+.page-header {
+background: var(–teal-deep);
+padding: 20px 24px 24px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+.page-header::before {
+content: ‘’;
+position: absolute;
+inset: 0;
+background: radial-gradient(ellipse at 20% 50%, rgba(126,200,216,0.12) 0%, transparent 60%),
+radial-gradient(ellipse at 80% 50%, rgba(245,208,32,0.08) 0%, transparent 60%);
+pointer-events: none;
+}
+.header-eyebrow {
+font-size: 0.75rem;
+font-weight: 900;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: var(–teal);
+margin-bottom: 8px;
+}
+.header-logo {
+font-family: ‘Nunito’, sans-serif;
+font-size: 1.9rem;
+font-weight: 900;
+color: var(–white);
+margin-bottom: 4px;
+position: relative;
+}
+.header-tagline {
+font-size: 0.88rem;
+color: rgba(255,255,255,0.6);
+font-weight: 700;
+margin-bottom: 20px;
+}
+.header-divider {
+width: 48px;
+height: 3px;
+background: var(–yellow);
+border-radius: 2px;
+margin: 0 auto 20px;
+}
+.header-trust {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 8px 20px;
+}
+.trust-pill {
+font-size: 0.78rem;
+font-weight: 800;
+color: rgba(255,255,255,0.75);
+display: flex;
+align-items: center;
+gap: 6px;
+}
+.trust-pill svg { flex-shrink: 0; }
+
+/* ── MAIN LAYOUT ── */
+.page-body {
+max-width: 680px;
+margin: 0 auto;
+padding: 28px 20px 60px;
+}
+
+/* ── SECTION CARDS ── */
+.form-card {
+background: var(–white);
+border-radius: 18px;
+border: 1.5px solid var(–border);
+padding: 28px 24px;
+margin-bottom: 20px;
+box-shadow: 0 2px 12px rgba(126,200,216,0.08);
+}
+.card-title {
+font-size: 1.1rem;
+font-weight: 900;
+color: var(–charcoal);
+letter-spacing: -0.3px;
+margin-bottom: 4px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.card-title-num {
+width: 28px;
+height: 28px;
+border-radius: 50%;
+background: var(–teal-deep);
+color: var(–white);
+font-size: 0.78rem;
+font-weight: 900;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+}
+.card-subtitle {
+font-size: 0.85rem;
+color: var(–muted);
+font-weight: 700;
+margin-bottom: 20px;
+padding-left: 38px;
+}
+
+/* ── FORM FIELDS ── */
+.fg { margin-bottom: 16px; }
+.fg:last-child { margin-bottom: 0; }
+.fg label {
+display: block;
+font-size: 0.8rem;
+font-weight: 900;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+color: var(–warm);
+margin-bottom: 7px;
+}
+.fg label .req { color: var(–red); }
+.fg input, .fg select, .fg textarea {
+width: 100%;
+font-family: ‘Nunito’, sans-serif;
+font-size: 0.98rem;
+font-weight: 700;
+color: var(–charcoal);
+background: var(–cream);
+border: 1.5px solid var(–border);
+border-radius: 10px;
+padding: 13px 16px;
+outline: none;
+transition: border-color 0.2s, box-shadow 0.2s;
+-webkit-appearance: none;
+}
+.fg input:focus, .fg select:focus, .fg textarea:focus {
+border-color: var(–teal);
+box-shadow: 0 0 0 3px rgba(126,200,216,0.15);
+background: var(–white);
+}
+.fg input.error, .fg select.error, .fg textarea.error {
+border-color: var(–red);
+box-shadow: 0 0 0 3px rgba(229,62,62,0.1);
+}
+.fg textarea { resize: vertical; min-height: 110px; }
+.fg select { cursor: pointer; background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘14’ height=‘14’ viewBox=‘0 0 24 24’ fill=‘none’ stroke=’%235A7A7A’ stroke-width=‘2.5’%3E%3Cpolyline points=‘6 9 12 15 18 9’/%3E%3C/svg%3E”); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.field-hint { font-size: 0.78rem; color: var(–muted); font-weight: 700; margin-top: 6px; }
+.field-error { font-size: 0.78rem; color: var(–red); font-weight: 800; margin-top: 5px; display: none; }
+.field-error.show { display: block; }
+
+/* ── PRODUCTS GRID ── */
+.products-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 8px;
+}
+.product-option {
+position: relative;
+}
+.product-option input[type=“checkbox”] {
+position: absolute;
+opacity: 0;
+width: 0;
+height: 0;
+}
+.product-label {
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 11px 14px;
+background: var(–cream);
+border: 1.5px solid var(–border);
+border-radius: 10px;
+cursor: pointer;
+font-size: 0.85rem;
+font-weight: 800;
+color: var(–warm);
+transition: all 0.18s;
+user-select: none;
+}
+.product-label:hover { border-color: var(–teal); background: rgba(126,200,216,0.06); }
+.product-option input:checked + .product-label {
+border-color: var(–teal);
+background: rgba(126,200,216,0.1);
+color: var(–teal-dark);
+}
+.check-box {
+width: 18px;
+height: 18px;
+border-radius: 5px;
+border: 2px solid rgba(126,200,216,0.4);
+background: var(–white);
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+transition: all 0.18s;
+}
+.product-option input:checked + .product-label .check-box {
+background: var(–teal);
+border-color: var(–teal);
+}
+.check-mark {
+width: 10px;
+height: 10px;
+opacity: 0;
+transition: opacity 0.15s;
+}
+.product-option input:checked + .product-label .check-mark { opacity: 1; }
+.product-price {
+margin-left: auto;
+font-size: 0.75rem;
+font-weight: 900;
+color: var(–teal);
+white-space: nowrap;
+}
+
+/* ── PAYMENT METHODS ── */
+.pay-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 12px;
+margin-bottom: 18px;
+}
+.pay-option input[type=“radio”] {
+position: absolute;
+opacity: 0;
+width: 0;
+height: 0;
+}
+.pay-option { position: relative; }
+.pay-label {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 8px;
+padding: 16px 10px;
+background: var(–cream);
+border: 2px solid var(–border);
+border-radius: 14px;
+cursor: pointer;
+text-align: center;
+transition: all 0.18s;
+}
+.pay-label:hover { border-color: var(–teal); }
+.pay-option input:checked + .pay-label {
+border-color: var(–teal);
+background: rgba(126,200,216,0.08);
+box-shadow: 0 0 0 2px rgba(126,200,216,0.2);
+}
+.pay-icon-wrap {
+width: 44px;
+height: 44px;
+border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.3rem;
+font-weight: 900;
+}
+.pay-name { font-size: 0.88rem; font-weight: 900; color: var(–charcoal); }
+.pay-info { font-size: 0.72rem; font-weight: 700; color: var(–muted); }
+.pay-detail {
+display: none;
+background: rgba(126,200,216,0.06);
+border: 1.5px solid var(–border);
+border-radius: 12px;
+padding: 16px 18px;
+font-size: 0.88rem;
+}
+.pay-detail.show { display: block; }
+.pay-detail-row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 5px 0;
+border-bottom: 1px solid var(–border);
+}
+.pay-detail-row:last-child { border-bottom: none; padding-bottom: 0; }
+.pay-detail-label { font-weight: 700; color: var(–muted); font-size: 0.82rem; }
+.pay-detail-val { font-weight: 900; color: var(–charcoal); font-size: 0.88rem; }
+.pay-detail-val a { color: var(–teal); text-decoration: none; }
+
+/* ── UPLOAD ZONE ── */
+.upload-zone {
+border: 2px dashed rgba(126,200,216,0.4);
+border-radius: 14px;
+padding: 28px 20px;
+text-align: center;
+cursor: pointer;
+transition: all 0.2s;
+background: var(–cream);
+}
+.upload-zone:hover, .upload-zone.drag-over {
+border-color: var(–teal);
+background: rgba(126,200,216,0.05);
+}
+.upload-zone svg { margin-bottom: 12px; }
+.upload-zone h4 { font-size: 1rem; font-weight: 900; color: var(–charcoal); margin-bottom: 6px; }
+.upload-zone p { font-size: 0.85rem; color: var(–muted); font-weight: 700; margin-bottom: 14px; }
+.upload-types { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-bottom: 14px; }
+.u-type {
+background: var(–white);
+border: 1.5px solid var(–border);
+border-radius: 20px;
+padding: 4px 12px;
+font-size: 0.75rem;
+font-weight: 900;
+color: var(–warm);
+}
+.upload-btn {
+background: var(–teal-deep);
+color: var(–white);
+border: none;
+border-radius: 30px;
+padding: 11px 24px;
+font-family: ‘Nunito’, sans-serif;
+font-weight: 900;
+font-size: 0.9rem;
+cursor: pointer;
+transition: all 0.2s;
+display: inline-block;
+}
+.upload-btn:hover { background: var(–warm); transform: translateY(-1px); }
+.upload-preview {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-top: 14px;
+justify-content: center;
+}
+.prev-thumb {
+width: 68px;
+height: 68px;
+border-radius: 8px;
+object-fit: cover;
+border: 2px solid var(–teal);
+}
+.upload-alt {
+margin-top: 16px;
+padding-top: 16px;
+border-top: 1px solid var(–border);
+}
+.upload-alt p { font-size: 0.82rem; color: var(–muted); font-weight: 700; margin-bottom: 10px; }
+.upload-contact-btns {
+display: flex;
+gap: 10px;
+justify-content: center;
+flex-wrap: wrap;
+}
+.contact-btn {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 10px 18px;
+border-radius: 30px;
+font-family: ‘Nunito’, sans-serif;
+font-weight: 900;
+font-size: 0.85rem;
+cursor: pointer;
+text-decoration: none;
+transition: all 0.2s;
+border: none;
+}
+.contact-btn-text {
+background: var(–yellow);
+color: var(–charcoal);
+}
+.contact-btn-email {
+background: var(–teal);
+color: white;
+}
+.contact-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+
+/* ── WHAT YOU NEED BOX ── */
+.need-box {
+background: linear-gradient(135deg, rgba(126,200,216,0.08), rgba(245,208,32,0.06));
+border: 1.5px solid rgba(126,200,216,0.25);
+border-radius: 14px;
+padding: 18px 20px;
+margin-top: 16px;
+}
+.need-box-title { font-size: 0.8rem; font-weight: 900; color: var(–warm); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+.need-items { display: flex; flex-wrap: wrap; gap: 8px; }
+.need-item {
+display: flex;
+align-items: center;
+gap: 7px;
+background: var(–white);
+border: 1.5px solid var(–border);
+border-radius: 8px;
+padding: 7px 12px;
+font-size: 0.82rem;
+font-weight: 800;
+color: var(–warm);
+}
+.need-item svg { flex-shrink: 0; }
+
+/* ── SUBMIT BUTTON ── */
+.submit-btn {
+width: 100%;
+background: linear-gradient(135deg, var(–teal-deep), #1A4A48);
+color: var(–white);
+border: none;
+border-radius: 14px;
+padding: 18px;
+font-family: ‘Nunito’, sans-serif;
+font-weight: 900;
+font-size: 1.1rem;
+cursor: pointer;
+transition: all 0.25s;
+margin-top: 8px;
+letter-spacing: 0.3px;
+box-shadow: 0 8px 24px rgba(13,43,42,0.25);
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(13,43,42,0.35); }
+.submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.tax-note {
+text-align: center;
+font-size: 0.8rem;
+color: var(–muted);
+font-weight: 700;
+margin-top: 10px;
+}
+
+/* ── ORDER TOTAL BOX ── */
+.total-input-wrap {
+position: relative;
+}
+.total-prefix {
+position: absolute;
+left: 16px;
+top: 50%;
+transform: translateY(-50%);
+font-weight: 900;
+color: var(–muted);
+font-size: 1rem;
+pointer-events: none;
+}
+.total-input-wrap input { padding-left: 28px; font-size: 1.1rem; font-weight: 900; }
+
+/* ── PROGRESS BAR ── */
+.progress-wrap {
+background: rgba(126,200,216,0.15);
+border-radius: 4px;
+height: 4px;
+margin-bottom: 24px;
+overflow: hidden;
+}
+.progress-bar {
+height: 100%;
+background: linear-gradient(90deg, var(–teal), var(–yellow));
+border-radius: 4px;
+transition: width 0.4s ease;
+width: 0%;
+}
+
+/* ── SUCCESS STATE ── */
+.success-overlay {
+display: none;
+position: fixed;
+inset: 0;
+background: rgba(13,43,42,0.85);
+z-index: 999;
+align-items: center;
+justify-content: center;
+padding: 20px;
+}
+.success-overlay.show { display: flex; }
+.success-card {
+background: var(–white);
+border-radius: 24px;
+padding: 40px 32px;
+max-width: 440px;
+width: 100%;
+text-align: center;
+animation: popIn 0.35s ease;
+}
+@keyframes popIn {
+from { transform: scale(0.88); opacity: 0; }
+to { transform: scale(1); opacity: 1; }
+}
+.success-icon {
+width: 72px;
+height: 72px;
+border-radius: 50%;
+background: linear-gradient(135deg, var(–teal), #5BBAD5);
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 20px;
+}
+.success-card h2 { font-size: 1.6rem; font-weight: 900; color: var(–charcoal); margin-bottom: 10px; }
+.success-card p { font-size: 0.95rem; color: var(–warm); font-weight: 700; line-height: 1.7; margin-bottom: 8px; }
+.success-steps {
+background: var(–cream);
+border-radius: 12px;
+padding: 16px 18px;
+margin: 18px 0;
+text-align: left;
+}
+.success-step {
+display: flex;
+align-items: flex-start;
+gap: 10px;
+margin-bottom: 10px;
+font-size: 0.88rem;
+font-weight: 700;
+color: var(–warm);
+}
+.success-step:last-child { margin-bottom: 0; }
+.step-dot {
+width: 22px;
+height: 22px;
+border-radius: 50%;
+background: var(–teal);
+color: white;
+font-size: 0.7rem;
+font-weight: 900;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+margin-top: 1px;
+}
+.success-upload {
+background: rgba(126,200,216,0.08);
+border: 1.5px solid var(–border);
+border-radius: 12px;
+padding: 14px 16px;
+margin-bottom: 18px;
+}
+.success-upload p { font-size: 0.85rem; color: var(–warm); margin-bottom: 10px; }
+.success-btn {
+background: var(–teal-deep);
+color: white;
+border: none;
+border-radius: 30px;
+padding: 13px 28px;
+font-family: ‘Nunito’, sans-serif;
+font-weight: 900;
+font-size: 0.95rem;
+cursor: pointer;
+width: 100%;
+transition: all 0.2s;
+}
+.success-btn:hover { background: var(–warm); }
+
+/* ── TOAST ── */
+.toast {
+position: fixed;
+bottom: 24px;
+left: 50%;
+transform: translateX(-50%) translateY(80px);
+background: var(–red);
+color: white;
+padding: 12px 24px;
+border-radius: 30px;
+font-weight: 900;
+font-size: 0.9rem;
+z-index: 9999;
+transition: transform 0.3s;
+white-space: nowrap;
+box-shadow: 0 8px 24px rgba(229,62,62,0.35);
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+.toast.success { background: var(–teal-deep); box-shadow: 0 8px 24px rgba(13,110,122,0.35); }
+
+/* ── POLICY BOX ── */
+.policy-box {
+background: var(–cream);
+border: 1.5px solid var(–border);
+border-radius: 12px;
+padding: 16px 18px;
+margin-top: 16px;
+}
+.policy-box p {
+font-size: 0.8rem;
+color: var(–muted);
+font-weight: 700;
+line-height: 1.85;
+}
+
+/* ── BACK LINK ── */
+.back-link {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+font-size: 0.85rem;
+font-weight: 800;
+color: rgba(255,255,255,0.65);
+text-decoration: none;
+margin-bottom: 16px;
+transition: color 0.2s;
+}
+.back-link:hover { color: white; }
+
+/* ── MOBILE ── */
+@media(max-width: 480px) {
+.field-row { grid-template-columns: 1fr; }
+.pay-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.pay-label { padding: 12px 6px; }
+.pay-icon-wrap { width: 36px; height: 36px; font-size: 1rem; }
+.pay-name { font-size: 0.78rem; }
+.products-grid { grid-template-columns: 1fr; }
+.form-card { padding: 22px 18px; }
+.success-card { padding: 32px 20px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+
+<div class="page-header">
+  <a href="https://lyfemoment.store" class="back-link">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to lyfemoment.store
+  </a>
+  <div class="header-eyebrow">Custom Graduation Products</div>
+  <div class="header-logo">Lyfe Moment Co.</div>
+  <div class="header-tagline">For every life moment, make it memorable</div>
+  <div class="header-divider"></div>
+  <div class="header-trust">
+    <span class="trust-pill">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Proof in 2–3 days
+    </span>
+    <span class="trust-pill">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12H19M12 5l7 7-7 7"/></svg>
+      Ships 4–7 business days
+    </span>
+    <span class="trust-pill">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Secure checkout
+    </span>
+    <span class="trust-pill">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      Ships nationwide
+    </span>
+  </div>
+</div>
+
+<!-- PROGRESS BAR -->
+
+<div class="page-body">
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+  <form id="orderForm" novalidate>
+
+```
+<!-- STEP 1: YOUR INFO -->
+<div class="form-card">
+  <div class="card-title"><span class="card-title-num">1</span> Your Information</div>
+  <div class="card-subtitle">Who should we contact about your order?</div>
+
+  <div class="field-row">
+    <div class="fg">
+      <label>Full Name <span class="req">*</span></label>
+      <input type="text" id="fullName" placeholder="e.g. Tamika Johnson" autocomplete="name">
+      <div class="field-error" id="err-fullName">Please enter your name</div>
+    </div>
+    <div class="fg">
+      <label>Phone Number <span class="req">*</span></label>
+      <input type="tel" id="phone" placeholder="(555) 000-0000" autocomplete="tel">
+      <div class="field-error" id="err-phone">Please enter your phone number</div>
+    </div>
+  </div>
+  <div class="fg">
+    <label>Email Address <span class="req">*</span></label>
+    <input type="email" id="email" placeholder="you@email.com" autocomplete="email">
+    <div class="field-error" id="err-email">Please enter a valid email</div>
+  </div>
+  <div class="fg">
+    <label>Instagram Handle <span style="color:var(--muted);font-weight:700;text-transform:none;letter-spacing:0;">(optional — for tagging your order reveal)</span></label>
+    <input type="text" id="instagram" placeholder="@yourusername">
+  </div>
+</div>
+
+<!-- STEP 2: GRADUATE INFO -->
+<div class="form-card">
+  <div class="card-title"><span class="card-title-num">2</span> About the Graduate</div>
+  <div class="card-subtitle">Tell us who we're celebrating!</div>
+
+  <div class="field-row">
+    <div class="fg">
+      <label>Graduate's Name <span class="req">*</span></label>
+      <input type="text" id="gradName" placeholder="Exactly as it should print">
+      <div class="field-error" id="err-gradName">Please enter the graduate's name</div>
+    </div>
+    <div class="fg">
+      <label>School Name <span class="req">*</span></label>
+      <input type="text" id="school" placeholder="e.g. Brea Olinda High">
+      <div class="field-error" id="err-school">Please enter school name</div>
+    </div>
+  </div>
+  <div class="field-row">
+    <div class="fg">
+      <label>Grade / Level <span class="req">*</span></label>
+      <select id="grade">
+        <option value="">Select grade...</option>
+        <option>Kindergarten</option>
+        <option>1st Grade</option>
+        <option>2nd Grade</option>
+        <option>3rd Grade</option>
+        <option>4th Grade</option>
+        <option>5th Grade</option>
+        <option>6th Grade</option>
+        <option>7th Grade</option>
+        <option>8th Grade</option>
+        <option>9th Grade</option>
+        <option>10th Grade</option>
+        <option>11th Grade</option>
+        <option>12th Grade / Senior</option>
+        <option>College / University</option>
+      </select>
+      <div class="field-error" id="err-grade">Please select a grade</div>
+    </div>
+    <div class="fg">
+      <label>Event Date <span class="req">*</span></label>
+      <input type="date" id="eventDate">
+      <div class="field-error" id="err-eventDate">Please enter your event date</div>
+    </div>
+  </div>
+  <div class="field-row">
+    <div class="fg">
+      <label>Mom's Name <span style="color:var(--muted);font-weight:700;text-transform:none;letter-spacing:0;">(optional)</span></label>
+      <input type="text" id="momName" placeholder="For dedications">
+    </div>
+    <div class="fg">
+      <label>Dad's Name <span style="color:var(--muted);font-weight:700;text-transform:none;letter-spacing:0;">(optional)</span></label>
+      <input type="text" id="dadName" placeholder="For dedications">
+    </div>
+  </div>
+  <div class="fg">
+    <label>Best Friend's Name <span style="color:var(--muted);font-weight:700;text-transform:none;letter-spacing:0;">(optional)</span></label>
+    <input type="text" id="bffName" placeholder="Optional — so sweet when included!">
+  </div>
+</div>
+
+<!-- STEP 3: DESIGN DETAILS -->
+<div class="form-card">
+  <div class="card-title"><span class="card-title-num">3</span> Design Details</div>
+  <div class="card-subtitle">Help us bring your vision to life.</div>
+
+  <div class="fg">
+    <label>Color Scheme <span class="req">*</span></label>
+    <input type="text" id="colors" placeholder="e.g. Tiffany blue, gold, and white">
+    <div class="field-error" id="err-colors">Please describe your color scheme</div>
+  </div>
+  <div class="fg">
+    <label>Party Vibe / Theme <span class="req">*</span></label>
+    <select id="vibe">
+      <option value="">Select your vibe...</option>
+      <option>Elegant &amp; Glamorous</option>
+      <option>Fun &amp; Colorful</option>
+      <option>Black Excellence</option>
+      <option>Tropical / Island</option>
+      <option>Royal / Regal</option>
+      <option>Cultural Pride</option>
+      <option>Garden Party</option>
+      <option>Tiffany Blue &amp; Gold</option>
+      <option>Modern &amp; Minimalist</option>
+      <option>Other (describe below)</option>
+    </select>
+    <div class="field-error" id="err-vibe">Please select a vibe</div>
+  </div>
+  <div class="fg">
+    <label>Design Notes &amp; Special Requests</label>
+    <textarea id="designNotes" placeholder="Cultural elements, specific colors, venue details, quotes you'd like included, any inspiration..."></textarea>
+    <div class="field-hint">The more detail, the better your proof will turn out!</div>
+  </div>
+</div>
+
+<!-- STEP 4: PRODUCTS -->
+<div class="form-card">
+  <div class="card-title"><span class="card-title-num">4</span> Products Needed</div>
+  <div class="card-subtitle">Select everything you'd like to order. <span id="selectedCount" style="color:var(--teal);font-weight:900;"></span></div>
+
+
+  <!-- Fan pricing note -->
+  <div style="background:linear-gradient(135deg,rgba(126,200,216,0.1),rgba(245,208,32,0.08));border:1.5px solid rgba(126,200,216,0.3);border-radius:12px;padding:14px 16px;margin-bottom:16px;">
+    <div style="font-size:0.8rem;font-weight:900;color:var(--warm);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">Fan Pricing</div>
+    <div style="font-size:0.9rem;font-weight:700;color:var(--warm);line-height:1.7;">
+      <strong style="color:var(--charcoal);">Simple design:</strong> 1 fan $15 · 5 fans $45<br>
+      <strong style="color:var(--charcoal);">Complex design:</strong> Price increases based on complexity — we'll quote you after reviewing your details.
+    </div>
+  </div>
+
+  <div class="products-grid" id="productsGrid">
+    <div class="product-option">
+      <input type="checkbox" id="p-fans" name="products" value="Graduation Fans">
+      <label class="product-label" for="p-fans">
+        <span class="check-box"><svg class="check-mark" viewBox="0 0 10 8" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 3.5 7 9 1"/></svg></span>
+        Graduation Fans
+        <span class="product-price">$15+</span>
+      </label>
+    </div>
+    <div class="product-option">
+      <input type="checkbox" id="p-flyers" name="products" value="Flyers">
+      <label class="product-label" for="p-flyers">
+        <span class="check-box"><svg class="check-mark" viewBox="0 0 10 8" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 3.5 7 9 1"/></svg></span>
+        Flyers
+        <span class="product-price">$50</span>
+      </label>
+    </div>
+    <div class="product-option">
+      <input type="checkbox" id="p-posters" name="products" value="Personalized Poster">
+      <label class="product-label" for="p-posters">
+        <span class="check-box"><svg class="check-mark" viewBox="0 0 10 8" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 3.5 7 9 1"/></svg></span>
+        Personalized Poster
+        <span class="product-price">$80</span>
+      </label>
+    </div>
+    <div class="product-option">
+      <input type="checkbox" id="p-foamboards" name="products" value="Foam Board (Life Size)">
+      <label class="product-label" for="p-foamboards">
+        <span class="check-box"><svg class="check-mark" viewBox="0 0 10 8" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 3.5 7 9 1"/></svg></span>
+        Foam Board — Life Size
+        <span class="product-price">$250</span>
+      </label>
+    </div>
+    <div class="product-option">
+      <input type="checkbox" id="p-banners" name="products" value="Banner">
+      <label class="product-label" for="p-banners">
+        <span class="check-box"><svg class="check-mark" viewBox="0 0 10 8" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 3.5 7 9 1"/></svg></span>
+        Banner
+        <span class="product-price">$40</span>
+      </label>
+    </div>
+    <div class="product-option">
+      <input type="checkbox" id="p-welcomesign" name="products" value="Acrylic Welcome Sign">
+      <label class="product-label" for="p-welcomesign">
+        <span class="check-box"><svg class="check-mark" viewBox="0 0 10 8" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 3.5 7 9 1"/></svg></span>
+        Acrylic Welcome Sign
+        <span class="product-price">$180</span>
+      </label>
+    </div>
+    <div class="product-option">
+      <input type="checkbox" id="p-treatbags" name="products" value="Custom Treat Bags">
+      <label class="product-label" for="p-treatbags">
+        <span class="check-box"><svg class="check-mark" viewBox="0 0 10 8" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 3.5 7 9 1"/></svg></span>
+        Custom Treat Bags
+      </label>
+    </div>
+    <div class="product-option">
+      <input type="checkbox" id="p-invitations" name="products" value="Invitations">
+      <label class="product-label" for="p-invitations">
+        <span class="check-box"><svg class="check-mark" viewBox="0 0 10 8" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 3.5 7 9 1"/></svg></span>
+        Invitations
+      </label>
+    </div>
+    <div class="product-option">
+      <input type="checkbox" id="p-menus" name="products" value="Menus">
+      <label class="product-label" for="p-menus">
+        <span class="check-box"><svg class="check-mark" viewBox="0 0 10 8" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 3.5 7 9 1"/></svg></span>
+        Menus
+      </label>
+    </div>
+    <div class="product-option">
+      <input type="checkbox" id="p-yardsigns" name="products" value="Yard Signs">
+      <label class="product-label" for="p-yardsigns">
+        <span class="check-box"><svg class="check-mark" viewBox="0 0 10 8" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 3.5 7 9 1"/></svg></span>
+        Yard Signs
+        <span class="product-price">$34.99</span>
+      </label>
+    </div>
+    <div class="product-option">
+      <input type="checkbox" id="p-yearbook" name="products" value="Personal Yearbook (from $89)">
+      <label class="product-label" for="p-yearbook">
+        <span class="check-box"><svg class="check-mark" viewBox="0 0 10 8" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 3.5 7 9 1"/></svg></span>
+        Personal Yearbook
+        <span class="product-price">$89+</span>
+      </label>
+    </div>
+    <div class="product-option">
+      <input type="checkbox" id="p-partyplanning" name="products" value="Party Planning / Event Services">
+      <label class="product-label" for="p-partyplanning">
+        <span class="check-box"><svg class="check-mark" viewBox="0 0 10 8" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 3.5 7 9 1"/></svg></span>
+        Party Planning / Events
+        <span class="product-price">Quote</span>
+      </label>
+    </div>
+  </div>
+  <div class="field-error" id="err-products" style="margin-top:10px;">Please select at least one product</div>
+
+  <div class="fg" style="margin-top:20px;">
+    <label>Quantity Needed <span style="color:var(--muted);font-weight:700;text-transform:none;letter-spacing:0;">(per item type)</span></label>
+    <input type="number" id="quantity" placeholder="e.g. 25" min="1">
+    <div class="field-hint">For party favors/treat bags, this is the number of guests.</div>
+  </div>
+
+  <div class="need-box">
+    <div class="need-box-title">Have these ready when you submit</div>
+    <div class="need-items">
+      <div class="need-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7EC8D8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>Color scheme</div>
+      <div class="need-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7EC8D8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>School &amp; grade</div>
+      <div class="need-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7EC8D8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>Graduate's name</div>
+      <div class="need-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7EC8D8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>Mom &amp; Dad's name</div>
+      <div class="need-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7EC8D8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>3 professional photos</div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 5: PHOTO UPLOAD -->
+<div class="form-card">
+  <div class="card-title"><span class="card-title-num">5</span> Upload Your Photos</div>
+  <div class="card-subtitle">Upload here or send via text/email after submitting.</div>
+
+  <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7EC8D8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+    <h4>Upload Photos &amp; Inspiration</h4>
+    <p>Drag &amp; drop here or click to browse.<br>Share your 3 professional photos + any inspiration images.</p>
+    <div class="upload-types">
+      <span class="u-type">JPG / PNG</span>
+      <span class="u-type">PDF</span>
+      <span class="u-type">HEIC</span>
+      <span class="u-type">Word Docs</span>
+      <span class="u-type">Up to 50MB</span>
+    </div>
+    <button class="upload-btn" type="button" onclick="event.stopPropagation(); document.getElementById('fileInput').click()">Browse Files</button>
+    <input type="file" id="fileInput" multiple accept="image/*,.pdf,.doc,.docx,.heic" style="display:none" onchange="handleUpload(event)">
+    <div class="upload-preview" id="uploadPreview"></div>
+  </div>
+
+  <div class="upload-alt">
+    <p>Can't upload right now? Send your photos directly after submitting:</p>
+    <div class="upload-contact-btns">
+      <a href="sms:9494089177" class="contact-btn contact-btn-text">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Text (949) 408-9177
+      </a>
+      <a href="/cdn-cgi/l/email-protection#cdafa2a2a6a0bfbeaea5a48daaa0aca4a1e3aea2a0" class="contact-btn contact-btn-email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email Us
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 6: SHIPPING -->
+<div class="form-card">
+  <div class="card-title"><span class="card-title-num">6</span> Shipping Address</div>
+  <div class="card-subtitle">Where should we send your order?</div>
+
+  <div class="fg">
+    <label>Street Address <span class="req">*</span></label>
+    <input type="text" id="address" placeholder="123 Main Street" autocomplete="street-address">
+    <div class="field-error" id="err-address">Please enter your shipping address</div>
+  </div>
+  <div class="field-row">
+    <div class="fg">
+      <label>City <span class="req">*</span></label>
+      <input type="text" id="city" placeholder="Corona" autocomplete="address-level2">
+      <div class="field-error" id="err-city">Please enter your city</div>
+    </div>
+    <div class="fg">
+      <label>State <span class="req">*</span></label>
+      <input type="text" id="state" placeholder="CA" maxlength="2" autocomplete="address-level1">
+      <div class="field-error" id="err-state">Please enter your state</div>
+    </div>
+  </div>
+  <div class="fg">
+    <label>ZIP Code <span class="req">*</span></label>
+    <input type="text" id="zip" placeholder="92882" maxlength="10" autocomplete="postal-code" style="max-width:160px;">
+    <div class="field-error" id="err-zip">Please enter your ZIP code</div>
+  </div>
+</div>
+
+<!-- STEP 7: PAYMENT -->
+<div class="form-card">
+  <div class="card-title"><span class="card-title-num">7</span> Payment Method</div>
+  <div class="card-subtitle">Choose how you'd like to pay.</div>
+
+  <div class="pay-grid">
+    <div class="pay-option">
+      <input type="radio" id="pay-square" name="payment" value="Square (Card/Tap)">
+      <label class="pay-label" for="pay-square">
+        <div class="pay-icon-wrap" style="background:#1A1A1A;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
+        </div>
+        <div class="pay-name">Square</div>
+        <div class="pay-info">Card / Tap</div>
+      </label>
+    </div>
+    <div class="pay-option">
+      <input type="radio" id="pay-zelle" name="payment" value="Zelle">
+      <label class="pay-label" for="pay-zelle">
+        <div class="pay-icon-wrap" style="background:#6D1ED4;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="pay-name">Zelle</div>
+        <div class="pay-info">Bank transfer</div>
+      </label>
+    </div>
+    <div class="pay-option">
+      <input type="radio" id="pay-cashapp" name="payment" value="Cash App">
+      <label class="pay-label" for="pay-cashapp">
+        <div class="pay-icon-wrap" style="background:var(--teal-deep);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.93V18h-2v-1.07C9.39 16.68 8 15.47 8 14h2c0 .55.45 1 1 1h2c.55 0 1-.45 1-1 0-.45-.31-.85-.77-.97l-3.12-.78C9.19 11.97 8 10.6 8 9c0-1.47 1.39-2.68 3-2.93V5h2v1.07C14.61 6.32 16 7.53 16 9h-2c0-.55-.45-1-1-1h-2c-.55 0-1 .45-1 1 0 .45.31.85.77.97l3.12.78C15.81 11.03 17 12.4 17 14c0 1.47-1.39 2.68-3 2.93z"/></svg>
+        </div>
+        <div class="pay-name">Cash App</div>
+        <div class="pay-info">$Cashtag</div>
+      </label>
+    </div>
+  </div>
+
+  <!-- Payment Details -->
+  <div class="pay-detail" id="detail-square">
+    <div class="pay-detail-row"><span class="pay-detail-label">Pay via</span><span class="pay-detail-val">Square Secure Checkout</span></div>
+    <div class="pay-detail-row"><span class="pay-detail-label">CA Sales Tax</span><span class="pay-detail-val">10.25% added to invoice</span></div>
+    <div class="pay-detail-row"><span class="pay-detail-label">Shipping</span><span class="pay-detail-val">Calculated &amp; invoiced separately</span></div>
+    <div class="pay-detail-row"><span class="pay-detail-label">Process</span><span class="pay-detail-val">We'll send a secure payment link</span></div>
+  </div>
+  <div class="pay-detail" id="detail-zelle">
+    <div class="pay-detail-row"><span class="pay-detail-label">Send to</span><span class="pay-detail-val"><a href="/cdn-cgi/l/email-protection#dbb9b4b4b0b6a9a8b8b3b29bbcb6bab2b7f5b8b4b6"><span class="__cf_email__" data-cfemail="a0c2cfcfcbcdd2d3c3c8c9e0c7cdc1c9cc8ec3cfcd">[email&#160;protected]</span></a></span></div>
+    <div class="pay-detail-row"><span class="pay-detail-label">Memo</span><span class="pay-detail-val">Your name + "Lyfe Moment Order"</span></div>
+    <div class="pay-detail-row"><span class="pay-detail-label">Note</span><span class="pay-detail-val">Tax + shipping invoiced separately</span></div>
+  </div>
+  <div class="pay-detail" id="detail-cashapp">
+    <div class="pay-detail-row"><span class="pay-detail-label">$Cashtag</span><span class="pay-detail-val">$LyfeMomentCo</span></div>
+    <div class="pay-detail-row"><span class="pay-detail-label">Memo</span><span class="pay-detail-val">Your name + "Lyfe Moment Order"</span></div>
+    <div class="pay-detail-row"><span class="pay-detail-label">Note</span><span class="pay-detail-val">Tax + shipping invoiced separately</span></div>
+  </div>
+  <div class="field-error" id="err-payment" style="margin-top:10px;">Please select a payment method</div>
+
+  <div class="fg" style="margin-top:18px;">
+    <label>Estimated Order Total ($) <span style="color:var(--muted);font-weight:700;text-transform:none;letter-spacing:0;">(optional — enter if you have a quote)</span></label>
+    <div class="total-input-wrap">
+      <span class="total-prefix">$</span>
+      <input type="number" id="orderTotal" placeholder="e.g. 250.00" min="0" step="0.01">
+    </div>
+    <div class="field-hint">Not sure? Leave blank — we'll send you a detailed invoice.</div>
+  </div>
+</div>
+
+<!-- SUBMIT -->
+<div class="form-card" style="background:linear-gradient(135deg,var(--teal-deep),#1A4A48);border:none;">
+  <div style="text-align:center;margin-bottom:20px;">
+    <div style="font-size:0.78rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:rgba(126,200,216,0.8);margin-bottom:8px;">Ready to celebrate?</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:white;margin-bottom:6px;">Let's Make It Happen</div>
+    <div style="font-size:0.88rem;color:rgba(255,255,255,0.65);font-weight:700;">We'll send your design proof within 2–3 business days.</div>
+  </div>
+  <button type="submit" class="submit-btn" id="submitBtn">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    Submit My Order
+  </button>
+  <div class="tax-note" style="color:rgba(255,255,255,0.5);">CA sales tax 10.25% + shipping added to final invoice</div>
+  <div class="tax-note" style="color:rgba(255,255,255,0.45);margin-top:6px;">No returns on custom or personalized items · 1 revision included · No cancellations after design begins</div>
+
+  <div class="policy-box" style="margin-top:20px;background:rgba(0,0,0,0.2);border-color:rgba(126,200,216,0.15);">
+    <p style="color:rgba(255,255,255,0.45);">By submitting this order you agree to our production policy: Digital proof emailed within 2–3 business days. Respond within 24 hours or printing begins. No refunds on custom items. Colors may vary slightly from screen. Rush orders available — contact us before purchasing.</p>
+  </div>
+</div>
+```
+
+  </form>
+</div>
+
+<!-- SUCCESS OVERLAY -->
+
+<div class="success-overlay" id="successOverlay">
+  <div class="success-card">
+    <div class="success-icon">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h2>Order Submitted!</h2>
+    <p>Thank you — we received your order and we're so excited to celebrate this milestone with you.</p>
+
+```
+<div class="success-steps">
+  <div class="success-step"><span class="step-dot">1</span> Check your email — we'll confirm your order details shortly.</div>
+  <div class="success-step"><span class="step-dot">2</span> Send your 3 professional photos using the options below.</div>
+  <div class="success-step"><span class="step-dot">3</span> Your design proof will be emailed within 2–3 business days.</div>
+  <div class="success-step"><span class="step-dot">4</span> Approve your proof and we'll ship within 4–7 business days.</div>
+</div>
+
+<div class="success-upload">
+  <p><strong style="color:var(--charcoal);">Send your photos now:</strong> Include your name and "Lyfe Moment Order" in your message.</p>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <a href="sms:9494089177" class="contact-btn contact-btn-text" style="justify-content:center;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Text Photos to (949) 408-9177
+    </a>
+    <a href="/cdn-cgi/l/email-protection#60020f0f0b0d121303080920070d01090c4e030f0d5f1315020a0503145d2c190605402d0f0d050e14402f120405124030080f140f13" class="contact-btn contact-btn-email" style="justify-content:center;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email Photos to <span class="__cf_email__" data-cfemail="afcdc0c0c4c2dddcccc7c6efc8c2cec6c381ccc0c2">[email&#160;protected]</span>
+    </a>
+  </div>
+</div>
+
+<button class="success-btn" onclick="document.getElementById('successOverlay').classList.remove('show')">Close</button>
+```
+
+  </div>
+</div>
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+// ── PROGRESS BAR ──
+function updateProgress() {
+const fields = [‘fullName’,‘phone’,‘email’,‘gradName’,‘school’,‘grade’,‘eventDate’,‘colors’,‘vibe’,‘address’,‘city’,‘state’,‘zip’];
+const products = document.querySelectorAll(‘input[name=“products”]:checked’).length;
+const payment = document.querySelector(‘input[name=“payment”]:checked’);
+let filled = fields.filter(id => document.getElementById(id)?.value?.trim()).length;
+if (products > 0) filled++;
+if (payment) filled++;
+const total = fields.length + 2;
+document.getElementById(‘progressBar’).style.width = Math.round((filled / total) * 100) + ‘%’;
+}
+document.querySelectorAll(‘input, select, textarea’).forEach(el => {
+el.addEventListener(‘input’, updateProgress);
+el.addEventListener(‘change’, updateProgress);
+});
+
+// ── PRODUCT COUNT ──
+document.querySelectorAll(‘input[name=“products”]’).forEach(cb => {
+cb.addEventListener(‘change’, () => {
+const count = document.querySelectorAll(‘input[name=“products”]:checked’).length;
+const el = document.getElementById(‘selectedCount’);
+el.textContent = count > 0 ? `${count} item${count > 1 ? 's' : ''} selected` : ‘’;
+updateProgress();
+});
+});
+
+// ── PAYMENT TOGGLE ──
+document.querySelectorAll(‘input[name=“payment”]’).forEach(radio => {
+radio.addEventListener(‘change’, () => {
+document.querySelectorAll(’.pay-detail’).forEach(d => d.classList.remove(‘show’));
+const map = { ‘Square (Card/Tap)’: ‘detail-square’, ‘Zelle’: ‘detail-zelle’, ‘Cash App’: ‘detail-cashapp’ };
+const target = map[radio.value];
+if (target) document.getElementById(target).classList.add(‘show’);
+updateProgress();
+});
+});
+
+// ── UPLOAD ──
+function handleUpload(e) {
+const files = Array.from(e.target.files);
+const preview = document.getElementById(‘uploadPreview’);
+files.forEach(f => {
+if (f.type.startsWith(‘image/’)) {
+const r = new FileReader();
+r.onload = ev => {
+const img = document.createElement(‘img’);
+img.src = ev.target.result;
+img.className = ‘prev-thumb’;
+preview.appendChild(img);
+};
+r.readAsDataURL(f);
+}
+});
+showToast(`${files.length} file(s) ready to submit`, ‘success’);
+}
+
+// Drag & drop
+const zone = document.getElementById(‘uploadZone’);
+zone.addEventListener(‘dragover’, e => { e.preventDefault(); zone.classList.add(‘drag-over’); });
+zone.addEventListener(‘dragleave’, () => zone.classList.remove(‘drag-over’));
+zone.addEventListener(‘drop’, e => {
+e.preventDefault();
+zone.classList.remove(‘drag-over’);
+if (e.dataTransfer.files.length) handleUpload({ target: { files: e.dataTransfer.files } });
+});
+
+// ── TOAST ──
+let toastTimer;
+function showToast(msg, type = ‘error’) {
+const t = document.getElementById(‘toast’);
+t.textContent = msg;
+t.className = ‘toast show’ + (type === ‘success’ ? ’ success’ : ‘’);
+clearTimeout(toastTimer);
+toastTimer = setTimeout(() => t.classList.remove(‘show’), 3500);
+}
+
+// ── VALIDATION ──
+function validateField(id, check) {
+const el = document.getElementById(id);
+const err = document.getElementById(‘err-’ + id);
+if (!el) return true;
+const valid = check(el.value);
+el.classList.toggle(‘error’, !valid);
+if (err) err.classList.toggle(‘show’, !valid);
+return valid;
+}
+
+function validateForm() {
+let valid = true;
+const v = (id, fn) => { if (!validateField(id, fn)) valid = false; };
+
+v(‘fullName’, val => val.trim().length > 1);
+v(‘phone’, val => val.trim().length > 6);
+v(‘email’, val => /^[^\s@]+@[^\s@]+.[^\s@]+$/.test(val.trim()));
+v(‘gradName’, val => val.trim().length > 1);
+v(‘school’, val => val.trim().length > 1);
+v(‘grade’, val => val !== ‘’);
+v(‘eventDate’, val => val !== ‘’);
+v(‘colors’, val => val.trim().length > 1);
+v(‘vibe’, val => val !== ‘’);
+v(‘address’, val => val.trim().length > 3);
+v(‘city’, val => val.trim().length > 1);
+v(‘state’, val => val.trim().length > 0);
+v(‘zip’, val => val.trim().length > 3);
+
+const products = document.querySelectorAll(‘input[name=“products”]:checked’).length;
+const prodErr = document.getElementById(‘err-products’);
+if (products === 0) { prodErr.classList.add(‘show’); valid = false; }
+else prodErr.classList.remove(‘show’);
+
+const payment = document.querySelector(‘input[name=“payment”]:checked’);
+const payErr = document.getElementById(‘err-payment’);
+if (!payment) { payErr.classList.add(‘show’); valid = false; }
+else payErr.classList.remove(‘show’);
+
+return valid;
+}
+
+// ── SUBMIT ──
+document.getElementById(‘orderForm’).addEventListener(‘submit’, async function(e) {
+e.preventDefault();
+if (!validateForm()) {
+showToast(‘Please fill in all required fields’);
+const firstErr = document.querySelector(’.error, .field-error.show’);
+if (firstErr) firstErr.scrollIntoView({ behavior: ‘smooth’, block: ‘center’ });
+return;
+}
+
+const btn = document.getElementById(‘submitBtn’);
+btn.disabled = true;
+btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="animation:spin 1s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Submitting...`;
+
+// Collect all form data
+const orderData = {
+submittedAt: new Date().toLocaleString(‘en-US’, { timeZone: ‘America/Los_Angeles’ }),
+contact: {
+name: document.getElementById(‘fullName’).value,
+phone: document.getElementById(‘phone’).value,
+email: document.getElementById(‘email’).value,
+instagram: document.getElementById(‘instagram’).value,
+},
+graduate: {
+name: document.getElementById(‘gradName’).value,
+school: document.getElementById(‘school’).value,
+grade: document.getElementById(‘grade’).value,
+eventDate: document.getElementById(‘eventDate’).value,
+momName: document.getElementById(‘momName’).value,
+dadName: document.getElementById(‘dadName’).value,
+bffName: document.getElementById(‘bffName’).value,
+},
+design: {
+colors: document.getElementById(‘colors’).value,
+vibe: document.getElementById(‘vibe’).value,
+notes: document.getElementById(‘designNotes’).value,
+},
+order: {
+products: Array.from(document.querySelectorAll(‘input[name=“products”]:checked’)).map(c => c.value),
+quantity: document.getElementById(‘quantity’).value,
+},
+shipping: {
+address: document.getElementById(‘address’).value,
+city: document.getElementById(‘city’).value,
+state: document.getElementById(‘state’).value,
+zip: document.getElementById(‘zip’).value,
+},
+payment: {
+method: document.querySelector(‘input[name=“payment”]:checked’)?.value,
+estimatedTotal: document.getElementById(‘orderTotal’).value,
+}
+};
+
+// ── WHERE DATA IS SAVED ──
+// For a production setup, connect this to:
+// 1. Formspree (formspree.io) — free email on every submission
+// 2. Google Sheets via Make.com (no-code automation)
+// 3. Airtable API — best for visual order management
+// Option shown: Formspree (replace YOUR_FORM_ID with your actual ID from formspree.io)
+
+const FORMSPREE_ENDPOINT = ‘https://formspree.io/f/YOUR_FORM_ID’; // ← replace with real ID
+
+try {
+// Build a clean email-friendly text summary
+const summary = Object.entries(orderData).map(([section, data]) =>
+`[${section.toUpperCase()}]\n` + Object.entries(data).map(([k, v]) =>
+`  ${k}: ${Array.isArray(v) ? v.join(', ') : v || '—'}`
+).join(’\n’)
+).join(’\n\n’);
+
+```
+// Simulate submission (replace with real fetch to Formspree/your backend)
+await new Promise(resolve => setTimeout(resolve, 1200));
+
+// Show success
+document.getElementById('successOverlay').classList.add('show');
+document.getElementById('orderForm').reset();
+document.getElementById('uploadPreview').innerHTML = '';
+document.getElementById('progressBar').style.width = '0%';
+document.querySelectorAll('.pay-detail').forEach(d => d.classList.remove('show'));
+```
+
+} catch (err) {
+showToast(‘Something went wrong. Please try again or contact us directly.’);
+} finally {
+btn.disabled = false;
+btn.innerHTML = `<svg width=“20” height=“20” viewBox=“0 0 2
